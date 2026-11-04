@@ -108,18 +108,15 @@ h3 { font-size: 1.3rem; }
 .evidence-list h3 { font-size: 1.05rem; }
 .evidence-list p { color: var(--muted); }
 
-.timeline { position: relative; max-width: 900px; margin-left: .2rem; }
-.timeline::before { content: ""; position: absolute; top: .5rem; bottom: .5rem; left: .42rem; width: 1px; background: #b9c0ba; }
-.timeline article { position: relative; padding: 0 0 2.8rem 2.7rem; }
-.timeline article:last-child { padding-bottom: 0; }
-.timeline-marker { position: absolute; z-index: 1; top: .35rem; left: 0; width: .88rem; height: .88rem; border: 3px solid #ececea; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
-.timeline h3 { margin-bottom: .35rem; font-size: 1.45rem; }
-.timeline p:last-child { max-width: 760px; margin-bottom: 0; }
-.timeline-type { display: block; margin-bottom: .35rem; color: var(--accent); font-size: .72rem; font-weight: 760; letter-spacing: .12em; text-transform: uppercase; }
-.timeline-light .timeline-marker { border-color: var(--paper); }
-.achievement-feature { width: 100%; padding: clamp(1.6rem, 4vw, 3rem); border: 1px solid #c8c8c4; border-radius: var(--radius); background: var(--surface); }
-.achievement-feature h3 { margin-bottom: .55rem; color: var(--accent); font-size: clamp(2.2rem, 5vw, 4.5rem); }
-.achievement-feature p:last-child { max-width: 760px; margin-bottom: 0; color: var(--muted); font-size: clamp(1rem, 1.8vw, 1.25rem); }
+.career-section { background: #ececea; border-top: 1px solid var(--line); }
+.career-section#achievements { border-bottom: 1px solid var(--line); }
+.career-section .section-heading { margin-bottom: clamp(2rem, 4vw, 3rem); }
+.timeline { display: grid; max-width: none; gap: 1rem; margin: 0; }
+.timeline article, .achievement-feature { width: 100%; padding: 1.5rem; border: 1px solid #c8c8c4; border-radius: var(--radius); background: var(--surface); }
+.timeline-marker { display: none; }
+.timeline h3, .achievement-feature h3 { margin-bottom: .45rem; color: var(--ink); font-size: 1.45rem; line-height: 1.2; }
+.timeline p:last-child, .achievement-feature p:last-child { max-width: 780px; margin-bottom: 0; color: var(--muted); font-size: 1rem; }
+.achievement-feature .eyebrow { margin-bottom: .5rem; }
 .compact-card { display: grid; grid-template-columns: auto 1fr; gap: 1.2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
 .compact-card h3 { margin-bottom: .5rem; }
 .compact-card p { margin-bottom: .35rem; color: var(--muted); }
