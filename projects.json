@@ -3,7 +3,7 @@
     "title": "Implicit Toxicity Detection in Bangla-English Code-Mixed Text",
     "tags": ["Transformers", "NLP", "Multilingual"],
     "problem": "Classify implicit toxicity in noisy, low-resource Bangla-English conversations where harmful meaning depends on context.",
-    "approach": ["Used a context-aware transformer model for implicit toxicity detection", "Created a preprocessing pipeline for noisy code-mixed text"],
+    "approach": ["Context-aware multilingual transformer with preprocessing for code-mixed text."],
     "result": "Evaluation results have not been published.",
     "stack": ["Transformers", "NLP", "Text preprocessing"],
     "repo": "TODO"
@@ -12,7 +12,7 @@
     "title": "ECG Anomaly Detection & Health Monitoring",
     "tags": ["Signal Processing", "Classification", "Time-Series"],
     "problem": "Classify arrhythmias from MIT-BIH ECG recordings using temporal and morphological signal characteristics.",
-    "approach": ["Combined Random Forest and LSTM models", "Implemented preprocessing, R-peak detection, and morphological feature extraction"],
+    "approach": ["Hybrid Random Forest and LSTM using R-peaks and morphological ECG features."],
     "result": "Evaluation results have not been published.",
     "stack": ["Random Forest", "LSTM", "ECG signal processing"],
     "repo": "TODO"
@@ -21,7 +21,7 @@
     "title": "Real-Time Drowsiness Detection System",
     "tags": ["Computer Vision", "OpenCV", "Edge Computing", "Raspberry Pi"],
     "problem": "Estimate drowsiness from visual facial cues under real-time, resource-constrained conditions.",
-    "approach": ["Modeled Eye and Mouth Aspect Ratios (EAR/MAR) with adaptive thresholding", "Optimized inference for Raspberry Pi deployment"],
+    "approach": ["EAR/MAR features with adaptive thresholds, optimized for Raspberry Pi."],
     "result": "Evaluation results have not been published.",
     "stack": ["OpenCV", "Computer Vision", "Raspberry Pi"],
     "repo": "TODO"
@@ -30,7 +30,7 @@
     "title": "Green AI Inference: Carbon-Aware Model Switching",
     "tags": ["Sustainable ML", "Model Optimization", "Energy Efficiency"],
     "problem": "Select among inference models to reduce carbon cost while maintaining stable predictions.",
-    "approach": ["Designed a dynamic model-switching method that balances efficiency and stability during inference"],
+    "approach": ["Dynamic model switching balances inference efficiency and stability."],
     "result": "Evaluation results have not been published.",
     "stack": ["Machine Learning", "Model optimization", "Dynamic routing"],
     "repo": "TODO"
@@ -39,7 +39,7 @@
     "title": "Voice Feature Extraction & Stress Detection",
     "tags": ["Audio Processing", "Feature Extraction", "ML Classification"],
     "problem": "Classify stress-related vocal patterns from measurable speech characteristics.",
-    "approach": ["Extracted pitch, volume, and speech-rate features", "Trained an ML classifier on the derived voice features"],
+    "approach": ["Pitch, volume, and speech-rate features with an ML classifier."],
     "result": "Evaluation results have not been published.",
     "stack": ["Audio processing", "Feature engineering", "Classification"],
     "repo": "TODO"
@@ -48,7 +48,7 @@
     "title": "Sentiment Detection System",
     "tags": ["NLP", "Text Classification", "Feature Engineering"],
     "problem": "Classify sentiment from unstructured text using reproducible text features.",
-    "approach": ["Built a text preprocessing and feature-extraction pipeline", "Compared and evaluated classification models"],
+    "approach": ["Text preprocessing and engineered features compared across classifiers."],
     "result": "Evaluation results have not been published.",
     "stack": ["NLP", "Feature engineering", "Classification"],
     "repo": "TODO"
@@ -57,7 +57,7 @@
     "title": "Academic Integrity Monitoring System",
     "tags": ["Proctoring", "Real-Time Monitoring", "Anomaly Detection"],
     "problem": "Detect anomalous behavioral patterns during online assessments for later review.",
-    "approach": ["Applied activity tracking and real-time anomaly detection", "Added post-exam analysis and visualization"],
+    "approach": ["Real-time behavioral anomaly detection with post-exam review."],
     "result": "Evaluation results have not been published.",
     "stack": ["Real-time monitoring", "Anomaly detection", "Data visualization"],
     "repo": "TODO"
@@ -66,7 +66,7 @@
     "title": "EEG Signal Visualization & Frequency Band Analysis",
     "tags": ["Signal Processing", "EEG", "Neuroscience"],
     "problem": "Separate and inspect multi-channel EEG activity across standard neural frequency bands.",
-    "approach": ["Applied band-pass filtering", "Extracted delta, theta, alpha, and beta activity from multi-channel EEG"],
+    "approach": ["Band-pass filtering separates delta, theta, alpha, and beta activity."],
     "result": "Produced visualizations of the extracted frequency-band activity.",
     "stack": ["EEG", "Digital filtering", "Signal visualization"],
     "repo": "TODO"
@@ -75,7 +75,7 @@
     "title": "Collaborative Research & Resource Sharing Platform",
     "tags": ["MERN Stack", "Full-Stack"],
     "problem": "Support structured, multi-user sharing and discovery of research resources.",
-    "approach": ["Built authentication with bcrypt plus file upload, download, search, and dashboards", "Implemented a REST API backed by MongoDB"],
+    "approach": ["MERN stack with authentication, search, file sharing, and a MongoDB API."],
     "result": "Delivered the core multi-user research-sharing workflow.",
     "stack": ["MongoDB", "Express", "React", "Node.js", "REST API"],
     "repo": "TODO"

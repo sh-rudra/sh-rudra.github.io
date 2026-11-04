@@ -44,9 +44,9 @@
       card.dataset.categories = categories.join(" ");
       card.append(make("p", "project-index", String(index + 1).padStart(2, "0")));
       card.append(make("h3", "", project.title));
-      card.append(caseRow("Problem", project.problem));
-      card.append(caseRow("Approach", project.approach));
-      card.append(caseRow("Result", project.result));
+      card.append(caseRow("What it solves", project.problem));
+      card.append(caseRow("Method", project.approach[0]));
+      if (!project.result.startsWith("Evaluation results")) card.append(caseRow("Outcome", project.result));
       card.append(caseRow("Stack", project.stack.join(" · ")));
 
       const tags = make("ul", "tags");

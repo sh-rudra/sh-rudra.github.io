@@ -59,7 +59,6 @@
       </button>
       <div class="nav-links" id="nav-links">
         <a href="#about">About</a>
-        <a href="#thesis">Thesis</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
@@ -112,54 +111,31 @@
       </div>
     </section>
 
-    <section class="section section-tinted" id="thesis" aria-labelledby="thesis-title">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Final Year Design Project</p>
-          <h2 id="thesis-title">PrivAdapt</h2>
-        </div>
-        <article class="feature-card">
-          <div class="feature-intro">
-            <p class="feature-kicker">On-device language intelligence, built for real constraints</p>
-            <h3>PrivAdapt: A Privacy-Oriented, Self-Recalibrating On-Device LLM System with Compute-Adaptive Routing</h3>
-            <p>A framework running 4-bit quantized 1B and 3B language models on a CPU-only laptop for health and agriculture queries. A lightweight router sends each query to a specialized local model, a fused model, the general local model, or a privacy-controlled server fallback.</p>
-            <p class="meta">Team of six · United International University, CSE · Supervisor: Ms. Sadia Islam, Assistant Professor</p>
-            <ul class="tags" aria-label="Thesis topics">
-              <li>On-Device LLM</li><li>Quantization</li><li>Routing</li><li>Privacy</li><li>Distribution Shift</li>
-            </ul>
-          </div>
-          <div class="feature-details">
-            <div>
-              <h4>Contributions</h4>
-              <ol class="numbered-list">
-                <li>Self-recalibrating routing detects distribution shift with maximum mean discrepancy and re-fits behind a validation gate.</li>
-                <li>Configurable privacy levels govern what the server payload may contain.</li>
-                <li>Compute-adaptive switching chooses between 1B and 3B models using query features and live device telemetry.</li>
-              </ol>
-            </div>
-            <div>
-              <h4>Evaluated results</h4>
-              <dl class="result-list">
-                <div><dt>96.0%</dt><dd>three-class routing accuracy on 150 queries</dd></div>
-                <div><dt>19.8%</dt><dd>lower normalized routing cost after drift</dd></div>
-                <div><dt>2.23×</dt><dd>1B-tier speedup over the 3B tier</dd></div>
-                <div><dt>0 / 450</dt><dd>inspected payloads with exact raw-query transmission</dd></div>
-              </dl>
-              <p class="fine-print">In a 500-query drift simulation, recalibration reduced post-shift false escalation from 1.000 to 0.693 (McNemar p = 1.9 × 10<sup>−22</sup>).</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
     <section class="section container" id="projects" aria-labelledby="projects-title">
       <div class="section-heading section-heading-row">
         <div>
           <p class="eyebrow">Selected work</p>
           <h2 id="projects-title">Projects</h2>
         </div>
-        <p>From low-resource NLP to real-time edge inference.</p>
+        <p>Machine learning work summarized by the problem each project addresses.</p>
       </div>
+      <article class="thesis-project" id="thesis" aria-labelledby="thesis-project-title">
+        <div class="thesis-project-copy">
+          <p class="eyebrow">Featured final year thesis</p>
+          <h3 id="thesis-project-title">PrivAdapt: A Privacy-Oriented, Self-Recalibrating On-Device LLM System</h3>
+          <p><strong>What it solves:</strong> Keeps sensitive health and agriculture queries private while routing each request to the most suitable model under changing data and device conditions.</p>
+          <p class="meta">Team of six · United International University, CSE · Supervisor: Ms. Sadia Islam, Assistant Professor</p>
+          <ul class="tags" aria-label="Thesis topics">
+            <li>On-Device LLM</li><li>Quantization</li><li>Routing</li><li>Privacy</li><li>Distribution Shift</li>
+          </ul>
+        </div>
+        <dl class="thesis-results" aria-label="Thesis results">
+          <div><dt>96.0%</dt><dd>routing accuracy</dd></div>
+          <div><dt>19.8%</dt><dd>lower routing cost after drift</dd></div>
+          <div><dt>2.23×</dt><dd>speedup with the 1B tier</dd></div>
+          <div><dt>0 / 450</dt><dd>raw-query transmissions</dd></div>
+        </dl>
+      </article>
       <div class="filters" role="group" aria-label="Filter projects by category">
         <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">All</button>
         <button class="filter" type="button" data-filter="nlp" aria-pressed="false">NLP</button>
