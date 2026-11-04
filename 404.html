@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Page not found | Samiul Haque Rudra</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="error-page">
+    <div class="container">
+      <p class="eyebrow">Error 404</p>
+      <h1>That page isn’t here.</h1>
+      <p>The link may be outdated, or the page may have moved.</p>
+      <a class="button" href="/">Return to the portfolio</a>
+    </div>
+  </main>
+  <style>
+    .error-page { min-height: 100svh; display: grid; place-items: center; }
+    .error-page .container { max-width: 760px; }
+    .error-page h1 { font-size: clamp(3rem, 10vw, 7rem); }
+    .error-page p:not(.eyebrow) { margin-bottom: 2rem; color: var(--muted); font-size: 1.15rem; }
+  </style>
+</body>
+</html>

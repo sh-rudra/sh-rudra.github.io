@@ -1,0 +1,83 @@
+[
+  {
+    "title": "Implicit Toxicity Detection in Bangla-English Code-Mixed Text",
+    "tags": ["Transformers", "NLP", "Multilingual"],
+    "problem": "Implicit toxicity is difficult to detect in noisy, low-resource Bangla-English conversations where harmful meaning depends on context.",
+    "approach": ["Built a context-aware transformer model for implicit toxicity detection", "Created a preprocessing pipeline for noisy code-mixed text"],
+    "result": "TODO",
+    "stack": ["Transformers", "NLP", "Text preprocessing"],
+    "repo": "TODO"
+  },
+  {
+    "title": "ECG Anomaly Detection & Health Monitoring",
+    "tags": ["Signal Processing", "Classification", "Time-Series"],
+    "problem": "Automate arrhythmia detection from MIT-BIH ECG recordings for real-time health monitoring.",
+    "approach": ["Combined Random Forest and LSTM models", "Implemented preprocessing, R-peak detection, and morphological feature extraction"],
+    "result": "TODO",
+    "stack": ["Random Forest", "LSTM", "ECG signal processing"],
+    "repo": "TODO"
+  },
+  {
+    "title": "Real-Time Drowsiness Detection System",
+    "tags": ["Computer Vision", "OpenCV", "Edge Computing", "Raspberry Pi"],
+    "problem": "Detect visual signs of driver drowsiness in real time on resource-constrained hardware.",
+    "approach": ["Tracked Eye and Mouth Aspect Ratios (EAR/MAR)", "Optimized on-device inference with adaptive thresholding"],
+    "result": "TODO",
+    "stack": ["OpenCV", "Computer Vision", "Raspberry Pi"],
+    "repo": "TODO"
+  },
+  {
+    "title": "Green AI Inference: Carbon-Aware Model Switching",
+    "tags": ["Sustainable ML", "Model Optimization", "Energy Efficiency"],
+    "problem": "Reduce the carbon cost of inference without making model selection unstable.",
+    "approach": ["Designed dynamic model switching that balances efficiency and stability during inference"],
+    "result": "TODO",
+    "stack": ["Machine Learning", "Model optimization", "Dynamic routing"],
+    "repo": "TODO"
+  },
+  {
+    "title": "Voice Feature Extraction & Stress Detection",
+    "tags": ["Audio Processing", "Feature Extraction", "ML Classification"],
+    "problem": "Identify vocal patterns associated with stress for behavioral analysis.",
+    "approach": ["Extracted pitch, volume, and speech-rate features", "Trained an ML classifier on the derived voice features"],
+    "result": "TODO",
+    "stack": ["Audio processing", "Feature engineering", "Classification"],
+    "repo": "TODO"
+  },
+  {
+    "title": "Sentiment Detection System",
+    "tags": ["NLP", "Text Classification", "Feature Engineering"],
+    "problem": "Classify sentiment reliably from unstructured text.",
+    "approach": ["Built a text preprocessing and feature-extraction pipeline", "Evaluated classification models"],
+    "result": "TODO",
+    "stack": ["NLP", "Feature engineering", "Classification"],
+    "repo": "TODO"
+  },
+  {
+    "title": "Academic Integrity Monitoring System",
+    "tags": ["Proctoring", "Real-Time Monitoring", "Anomaly Detection"],
+    "problem": "Surface suspicious behavior during online assessments while preserving useful evidence for later review.",
+    "approach": ["Tracked activity and detected behavioral anomalies in real time", "Added post-exam analysis and visualization"],
+    "result": "TODO",
+    "stack": ["Real-time monitoring", "Anomaly detection", "Data visualization"],
+    "repo": "TODO"
+  },
+  {
+    "title": "EEG Signal Visualization & Frequency Band Analysis",
+    "tags": ["Signal Processing", "EEG", "Neuroscience"],
+    "problem": "Make multi-channel EEG recordings easier to inspect across clinically relevant frequency bands.",
+    "approach": ["Applied band-pass filtering", "Extracted delta, theta, alpha, and beta activity from multi-channel EEG"],
+    "result": "TODO",
+    "stack": ["EEG", "Digital filtering", "Signal visualization"],
+    "repo": "TODO"
+  },
+  {
+    "title": "Collaborative Research & Resource Sharing Platform",
+    "tags": ["MERN Stack", "Full-Stack"],
+    "problem": "Give research communities one place to share papers and coordinate multi-user contributions.",
+    "approach": ["Built authentication with bcrypt plus file upload, download, search, and dashboards", "Implemented a REST API backed by MongoDB"],
+    "result": "TODO",
+    "stack": ["MongoDB", "Express", "React", "Node.js", "REST API"],
+    "repo": "TODO"
+  }
+]
