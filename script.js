@@ -46,7 +46,7 @@
       card.append(make("h3", "", project.title));
       card.append(caseRow("Problem", project.problem));
       card.append(caseRow("Approach", project.approach));
-      if (project.result && project.result !== "TODO") card.append(caseRow("Result", project.result));
+      card.append(caseRow("Result", project.result));
       card.append(caseRow("Stack", project.stack.join(" · ")));
 
       const tags = make("ul", "tags");
