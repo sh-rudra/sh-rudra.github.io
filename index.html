@@ -33,6 +33,10 @@
     "email": "mailto:shrudra72@gmail.com",
     "jobTitle": "AI/ML Engineer | Research Engineer",
     "description": "Samiul Haque Rudra, Computer Science graduate and research enthusiast in AI and Machine Learning, with work in deep learning, NLP, and robust, on-device intelligent systems.",
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Former President, UIU Computer Club (UIUCCL)"
+    },
     "alumniOf": {
       "@type": "CollegeOrUniversity",
       "name": "United International University"
@@ -59,9 +63,11 @@
       </button>
       <div class="nav-links" id="nav-links">
         <a href="#about">About</a>
+        <a href="#thesis">Thesis</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -89,16 +95,7 @@
       </figure>
     </section>
 
-    <section class="highlights" aria-label="Career highlights">
-      <div class="container highlight-grid">
-        <article><strong>Champion</strong><p>Deep Learning in Computational and Spatial Biology (Inter-University Competition)</p></article>
-        <article><strong>President</strong><p>UIU Computer Club (UIUCCL)</p></article>
-        <article><strong>96.0%</strong><p>Routing accuracy in thesis system</p></article>
-        <article><strong>Final Year Thesis</strong><p>On-Device LLM System</p></article>
-      </div>
-    </section>
-
-    <section class="section container about" id="about" aria-labelledby="about-title">
+    <section class="section container about reveal" id="about" aria-labelledby="about-title">
       <div class="section-heading">
         <p class="eyebrow">Profile</p>
         <h2 id="about-title">About</h2>
@@ -111,31 +108,82 @@
       </div>
     </section>
 
-    <section class="section container" id="projects" aria-labelledby="projects-title">
-      <div class="section-heading section-heading-row">
-        <div>
-          <p class="eyebrow">Selected work</p>
-          <h2 id="projects-title">Projects</h2>
+    <section class="section section-tinted reveal" id="thesis" aria-labelledby="thesis-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Research focus</p>
+          <h2 id="thesis-title">Final Year Thesis</h2>
         </div>
+        <article class="thesis-feature">
+          <div class="thesis-summary">
+            <h3>PrivAdapt: A Privacy-Oriented, Self-Recalibrating On-Device LLM System</h3>
+            <p>Keeps sensitive health and agriculture queries private while routing each request to the most suitable model under changing data and device conditions.</p>
+            <p class="meta">Team of six · United International University, CSE · Supervisor: Ms. Sadia Islam, Assistant Professor</p>
+            <ul class="tags" aria-label="Thesis topics">
+              <li>On-Device LLM</li><li>Quantization</li><li>Routing</li><li>Privacy</li><li>Distribution Shift</li>
+            </ul>
+          </div>
+          <dl class="thesis-results" aria-label="Thesis results">
+            <div><dt>96.0%</dt><dd>routing accuracy</dd></div>
+            <div><dt>19.8%</dt><dd>lower routing cost after drift</dd></div>
+            <div><dt>2.23×</dt><dd>speedup with the 1B tier</dd></div>
+            <div><dt>0 / 450</dt><dd>raw-query transmissions</dd></div>
+          </dl>
+          <figure class="thesis-diagram">
+            <svg viewBox="0 0 930 470" role="img" aria-labelledby="routing-diagram-title routing-diagram-desc">
+              <title id="routing-diagram-title">PrivAdapt query routing flow</title>
+              <desc id="routing-diagram-desc">A user query enters an on-device router that checks its embedding, domain, and confidence, then routes it to a specialised local model, fused model, general local base model, or a server fallback with a privacy-controlled payload.</desc>
+              <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" class="diagram-arrow"/>
+                </marker>
+              </defs>
+              <g class="diagram-lines" marker-end="url(#arrow)">
+                <path d="M150 235 H205"/>
+                <path d="M455 235 C500 235 490 65 545 65"/>
+                <path d="M455 235 C500 235 500 175 545 175"/>
+                <path d="M455 235 C500 235 500 285 545 285"/>
+                <path d="M455 235 C500 235 490 395 545 395"/>
+              </g>
+              <g class="diagram-node">
+                <rect x="20" y="195" width="130" height="80" rx="12"/>
+                <text x="85" y="230" text-anchor="middle">User</text>
+                <text x="85" y="252" text-anchor="middle">query</text>
+              </g>
+              <g class="diagram-node diagram-router">
+                <rect x="205" y="125" width="250" height="220" rx="16"/>
+                <text x="330" y="165" text-anchor="middle" class="diagram-title">On-device router</text>
+                <line x1="235" y1="185" x2="425" y2="185"/>
+                <text x="330" y="220" text-anchor="middle">Embedding</text>
+                <text x="330" y="260" text-anchor="middle">Domain check</text>
+                <text x="330" y="300" text-anchor="middle">Confidence</text>
+              </g>
+              <g class="diagram-node">
+                <rect x="545" y="20" width="350" height="90" rx="12"/>
+                <text x="720" y="59" text-anchor="middle" class="diagram-title">Specialised local model</text>
+                <text x="720" y="82" text-anchor="middle">Domain-specific response</text>
+                <rect x="545" y="130" width="350" height="90" rx="12"/>
+                <text x="720" y="169" text-anchor="middle" class="diagram-title">Fused model</text>
+                <text x="720" y="192" text-anchor="middle">Cross-domain response</text>
+                <rect x="545" y="240" width="350" height="90" rx="12"/>
+                <text x="720" y="279" text-anchor="middle" class="diagram-title">General local base model</text>
+                <text x="720" y="302" text-anchor="middle">General-purpose response</text>
+                <rect x="545" y="350" width="350" height="90" rx="12"/>
+                <text x="720" y="389" text-anchor="middle" class="diagram-title">Server fallback</text>
+                <text x="720" y="412" text-anchor="middle">Privacy-controlled payload</text>
+              </g>
+            </svg>
+            <figcaption>Routing stays on-device when possible and controls what may leave the device.</figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading section-heading-row">
+        <div><p class="eyebrow">Selected work</p><h2 id="projects-title">Projects</h2></div>
         <p>Machine learning work summarized by the problem each project addresses.</p>
       </div>
-      <article class="thesis-project" id="thesis" aria-labelledby="thesis-project-title">
-        <div class="thesis-project-copy">
-          <p class="eyebrow">Featured final year thesis</p>
-          <h3 id="thesis-project-title">PrivAdapt: A Privacy-Oriented, Self-Recalibrating On-Device LLM System</h3>
-          <p><strong>What it solves:</strong> Keeps sensitive health and agriculture queries private while routing each request to the most suitable model under changing data and device conditions.</p>
-          <p class="meta">Team of six · United International University, CSE · Supervisor: Ms. Sadia Islam, Assistant Professor</p>
-          <ul class="tags" aria-label="Thesis topics">
-            <li>On-Device LLM</li><li>Quantization</li><li>Routing</li><li>Privacy</li><li>Distribution Shift</li>
-          </ul>
-        </div>
-        <dl class="thesis-results" aria-label="Thesis results">
-          <div><dt>96.0%</dt><dd>routing accuracy</dd></div>
-          <div><dt>19.8%</dt><dd>lower routing cost after drift</dd></div>
-          <div><dt>2.23×</dt><dd>speedup with the 1B tier</dd></div>
-          <div><dt>0 / 450</dt><dd>raw-query transmissions</dd></div>
-        </dl>
-      </article>
       <div class="filters" role="group" aria-label="Filter projects by category">
         <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">All</button>
         <button class="filter" type="button" data-filter="nlp" aria-pressed="false">NLP</button>
@@ -144,33 +192,144 @@
         <button class="filter" type="button" data-filter="full-stack" aria-pressed="false">Full-Stack</button>
       </div>
       <div class="project-grid" id="project-grid" aria-live="polite">
-        <p class="loading">Loading projects…</p>
+        <article class="project-card" data-categories="nlp">
+          <p class="project-index">01</p><h3>Implicit Toxicity Detection in Bangla-English Code-Mixed Text</h3>
+          <dl class="project-facts">
+            <div><dt>Problem</dt><dd>Classify implicit toxicity where harmful meaning depends on conversational context.</dd></div>
+            <div><dt>Approach</dt><dd>Context-aware multilingual transformer with preprocessing for noisy code-mixed text.</dd></div>
+            <div><dt>Result</dt><dd>Evaluation results have not been published.</dd></div>
+            <div><dt>Stack</dt><dd>Transformers · NLP · Text preprocessing</dd></div>
+          </dl>
+          <ul class="tags" aria-label="Project tags"><li>Transformers</li><li>NLP</li><li>Multilingual</li></ul>
+        </article>
+        <article class="project-card" data-categories="signal">
+          <p class="project-index">02</p><h3>ECG Anomaly Detection &amp; Health Monitoring</h3>
+          <dl class="project-facts">
+            <div><dt>Problem</dt><dd>Classify arrhythmias from ECG recordings using temporal and morphological characteristics.</dd></div>
+            <div><dt>Approach</dt><dd>Hybrid Random Forest and LSTM using R-peaks and morphological ECG features.</dd></div>
+            <div><dt>Result</dt><dd>Evaluation results have not been published.</dd></div>
+            <div><dt>Stack</dt><dd>Random Forest · LSTM · ECG signal processing</dd></div>
+          </dl>
+          <ul class="tags" aria-label="Project tags"><li>Signal Processing</li><li>Classification</li><li>Time-Series</li></ul>
+        </article>
+        <article class="project-card" data-categories="vision">
+          <p class="project-index">03</p><h3>Real-Time Drowsiness Detection System</h3>
+          <dl class="project-facts">
+            <div><dt>Problem</dt><dd>Estimate drowsiness from facial cues under real-time, resource-constrained conditions.</dd></div>
+            <div><dt>Approach</dt><dd>EAR/MAR features with adaptive thresholds, optimized for Raspberry Pi.</dd></div>
+            <div><dt>Result</dt><dd>Evaluation results have not been published.</dd></div>
+            <div><dt>Stack</dt><dd>OpenCV · Computer Vision · Raspberry Pi</dd></div>
+          </dl>
+          <ul class="tags" aria-label="Project tags"><li>Computer Vision</li><li>Edge Computing</li><li>Raspberry Pi</li></ul>
+        </article>
+        <article class="project-card" data-categories="optimization">
+          <p class="project-index">04</p><h3>Green AI Inference: Carbon-Aware Model Switching</h3>
+          <dl class="project-facts">
+            <div><dt>Problem</dt><dd>Reduce inference carbon cost while maintaining stable model selection.</dd></div>
+            <div><dt>Approach</dt><dd>Dynamic model switching balances inference efficiency and stability.</dd></div>
+            <div><dt>Result</dt><dd>Evaluation results have not been published.</dd></div>
+            <div><dt>Stack</dt><dd>Machine Learning · Model optimization · Dynamic routing</dd></div>
+          </dl>
+          <ul class="tags" aria-label="Project tags"><li>Sustainable ML</li><li>Model Optimization</li></ul>
+        </article>
+        <article class="project-card" data-categories="signal">
+          <p class="project-index">05</p><h3>Voice Feature Extraction &amp; Stress Detection</h3>
+          <dl class="project-facts">
+            <div><dt>Problem</dt><dd>Classify stress-related vocal patterns from measurable speech characteristics.</dd></div>
+            <div><dt>Approach</dt><dd>Pitch, volume, and speech-rate features with an ML classifier.</dd></div>
+            <div><dt>Result</dt><dd>Evaluation results have not been published.</dd></div>
+            <div><dt>Stack</dt><dd>Audio processing · Feature engineering · Classification</dd></div>
+          </dl>
+          <ul class="tags" aria-label="Project tags"><li>Audio Processing</li><li>Feature Extraction</li></ul>
+        </article>
+        <article class="project-card" data-categories="nlp">
+          <p class="project-index">06</p><h3>Sentiment Detection System</h3>
+          <dl class="project-facts">
+            <div><dt>Problem</dt><dd>Classify sentiment from unstructured text using reproducible text features.</dd></div>
+            <div><dt>Approach</dt><dd>Text preprocessing and engineered features compared across classifiers.</dd></div>
+            <div><dt>Result</dt><dd>Evaluation results have not been published.</dd></div>
+            <div><dt>Stack</dt><dd>NLP · Feature engineering · Classification</dd></div>
+          </dl>
+          <ul class="tags" aria-label="Project tags"><li>NLP</li><li>Text Classification</li></ul>
+        </article>
+        <article class="project-card" data-categories="vision">
+          <p class="project-index">07</p><h3>Academic Integrity Monitoring System</h3>
+          <dl class="project-facts">
+            <div><dt>Problem</dt><dd>Detect anomalous behavioral patterns during online assessments for later review.</dd></div>
+            <div><dt>Approach</dt><dd>Real-time behavioral anomaly detection with post-exam analysis.</dd></div>
+            <div><dt>Result</dt><dd>Evaluation results have not been published.</dd></div>
+            <div><dt>Stack</dt><dd>Real-time monitoring · Anomaly detection · Visualization</dd></div>
+          </dl>
+          <ul class="tags" aria-label="Project tags"><li>Proctoring</li><li>Anomaly Detection</li></ul>
+        </article>
+        <article class="project-card" data-categories="signal">
+          <p class="project-index">08</p><h3>EEG Signal Visualization &amp; Frequency Band Analysis</h3>
+          <dl class="project-facts">
+            <div><dt>Problem</dt><dd>Separate multi-channel EEG activity across standard neural frequency bands.</dd></div>
+            <div><dt>Approach</dt><dd>Band-pass filtering extracts delta, theta, alpha, and beta activity.</dd></div>
+            <div><dt>Result</dt><dd>Produced visualizations of the extracted frequency-band activity.</dd></div>
+            <div><dt>Stack</dt><dd>EEG · Digital filtering · Signal visualization</dd></div>
+          </dl>
+          <ul class="tags" aria-label="Project tags"><li>Signal Processing</li><li>EEG</li><li>Neuroscience</li></ul>
+        </article>
+        <article class="project-card" data-categories="full-stack">
+          <p class="project-index">09</p><h3>Collaborative Research &amp; Resource Sharing Platform</h3>
+          <dl class="project-facts">
+            <div><dt>Problem</dt><dd>Support structured, multi-user sharing and discovery of research resources.</dd></div>
+            <div><dt>Approach</dt><dd>MERN stack with authentication, search, file sharing, and a MongoDB API.</dd></div>
+            <div><dt>Result</dt><dd>Delivered the core multi-user research-sharing workflow.</dd></div>
+            <div><dt>Stack</dt><dd>MongoDB · Express · React · Node.js · REST API</dd></div>
+          </dl>
+          <ul class="tags" aria-label="Project tags"><li>MERN Stack</li><li>Full-Stack</li></ul>
+        </article>
       </div>
-      <noscript><p class="notice">JavaScript is required to load the project case studies.</p></noscript>
     </section>
 
-    <section class="section section-dark" id="skills" aria-labelledby="skills-title">
+    <section class="section section-dark reveal" id="skills" aria-labelledby="skills-title">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Technical toolkit</p>
           <h2 id="skills-title">Skills</h2>
         </div>
         <div class="skill-grid">
-          <article><h3>Languages</h3><p>Python, Java, C++, JavaScript, SQL</p></article>
-          <article><h3>Machine Learning</h3><p>Deep Learning, Transformers, NLP, Computer Vision, Time-Series Analysis, Model Optimization, Edge Inference</p></article>
-          <article><h3>Frameworks &amp; Libraries</h3><p>TensorFlow, PyTorch, Scikit-learn, OpenCV, MediaPipe, MNE, EEGLAB, Librosa, Pandas, NumPy</p></article>
-          <article><h3>Core CS &amp; Web</h3><p>Data Structures &amp; Algorithms, OOP, DBMS, Software Engineering, MERN Stack, Git</p></article>
+          <article><h3>Languages</h3><ul class="skill-chips"><li>Python</li><li>Java</li><li>C++</li><li>JavaScript</li><li>SQL</li></ul></article>
+          <article><h3>Machine Learning</h3><ul class="skill-chips"><li>Deep Learning</li><li>Transformers</li><li>NLP</li><li>Computer Vision</li><li>Time-Series</li><li>Model Optimization</li><li>Edge Inference</li></ul></article>
+          <article><h3>Frameworks &amp; Libraries</h3><ul class="skill-chips"><li>TensorFlow</li><li>PyTorch</li><li>Scikit-learn</li><li>OpenCV</li><li>MediaPipe</li><li>MNE</li><li>EEGLAB</li><li>Librosa</li><li>Pandas</li><li>NumPy</li></ul></article>
+          <article><h3>Core CS &amp; Web</h3><ul class="skill-chips"><li>Data Structures &amp; Algorithms</li><li>OOP</li><li>DBMS</li><li>Software Engineering</li><li>MERN Stack</li><li>Git</li></ul></article>
         </div>
       </div>
     </section>
 
-    <section class="section container" id="soft-skills" aria-labelledby="soft-skills-title">
-      <div class="section-heading">
-        <p class="eyebrow">How I work</p>
-        <h2 id="soft-skills-title">Capabilities in practice</h2>
+    <section class="section section-tinted reveal" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Research, leadership, and recognition</p>
+          <h2 id="experience-title">Experience</h2>
+        </div>
+        <div class="timeline">
+          <article>
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div class="timeline-body"><span class="timeline-type">Research</span><h3>Research Intern</h3><p class="meta">Brain Computer Interface Research Lab · IRIIC, UIU</p><p>Researched EEG-based BCI systems, signal-processing techniques, AI-driven cognitive analysis, and neuromarketing applications.</p></div>
+          </article>
+          <article>
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div class="timeline-body"><span class="timeline-type">Leadership</span><h3>Former President, UIU Computer Club (UIUCCL)</h3><p>Led technical workshops on ML/AI and cybersecurity; mentored students in competitive programming and research.</p></div>
+          </article>
+          <article>
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div class="timeline-body"><span class="timeline-type">Leadership</span><h3>Outreach &amp; Engagement Lead</h3><p class="meta">UIU CSE FEST 2025</p><p>Coordinated outreach for participants, sponsors, and partner institutions.</p></div>
+          </article>
+          <article>
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div class="timeline-body"><span class="timeline-type">Recognition</span><h3>Champion</h3><p>Deep Learning in Computational and Spatial Biology, Inter-University Competition</p></div>
+          </article>
+        </div>
       </div>
+    </section>
+
+    <section class="section container reveal" id="how-i-work" aria-labelledby="how-i-work-title">
+      <div class="section-heading"><p class="eyebrow">Working style</p><h2 id="how-i-work-title">How I work</h2></div>
       <div class="evidence-list">
-        <article><h3>Leadership</h3><p>Served as President of UIU Computer Club, leading the club and its technical programs.</p></article>
         <article><h3>Communication &amp; Teaching</h3><p>Led ML/AI and cybersecurity workshops; mentored students in competitive programming and research.</p></article>
         <article><h3>Teamwork &amp; Collaboration</h3><p>Delivered a six-person thesis and coordinated CSE FEST outreach across participants, sponsors, and partner institutions.</p></article>
         <article><h3>Research &amp; Problem Solving</h3><p>Researched EEG-based BCI systems at IRIIC and won an inter-university deep learning competition.</p></article>
@@ -178,42 +337,14 @@
       </div>
     </section>
 
-    <section class="section section-tinted" id="experience" aria-labelledby="experience-title">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Experience &amp; Leadership</p>
-          <h2 id="experience-title">Beyond coursework</h2>
-        </div>
-        <div class="timeline">
-          <article>
-            <div><span class="timeline-type">Research</span></div>
-            <div><h3>Research Intern</h3><p class="meta">Brain Computer Interface Research Lab · IRIIC, UIU</p><p>Researched EEG-based BCI systems, signal-processing techniques, AI-driven cognitive analysis, and neuromarketing applications.</p></div>
-          </article>
-          <article>
-            <div><span class="timeline-type">Leadership</span></div>
-            <div><h3>President</h3><p class="meta">UIU Computer Club (UIUCCL)</p><p>Led technical workshops on ML/AI and cybersecurity; mentored students in competitive programming and research.</p></div>
-          </article>
-          <article>
-            <div><span class="timeline-type">Leadership</span></div>
-            <div><h3>Outreach &amp; Engagement Lead</h3><p class="meta">UIU CSE FEST 2025</p><p>Coordinated outreach for participants, sponsors, and partner institutions.</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section container" id="achievements" aria-labelledby="achievements-title">
-      <div class="section-heading"><p class="eyebrow">Recognition</p><h2 id="achievements-title">Achievement</h2></div>
-      <article class="compact-card"><span class="award-mark" aria-hidden="true">01</span><div><h3>Champion</h3><p>Deep Learning in Computational and Spatial Biology - Inter-University Competition</p></div></article>
-    </section>
-
-    <section class="section section-tinted" id="education" aria-labelledby="education-title">
+    <section class="section section-tinted reveal" id="education" aria-labelledby="education-title">
       <div class="container">
         <div class="section-heading"><p class="eyebrow">Foundation</p><h2 id="education-title">Education</h2></div>
         <article class="compact-card education-card"><span class="award-mark" aria-hidden="true">26</span><div><h3>B.Sc in Computer Science &amp; Engineering</h3><p>United International University (UIU), Dhaka. Graduated 2026. Focus: Machine Learning.</p><p class="coursework"><strong>Coursework:</strong> Machine Learning, Deep Learning, NLP, Computer Vision, Data Structures, DBMS, Software Engineering, AI, Linear Algebra, Statistics.</p></div></article>
       </div>
     </section>
 
-    <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <section class="section contact reveal" id="contact" aria-labelledby="contact-title">
       <div class="container contact-inner">
         <div>
           <p class="eyebrow">Let's build something useful</p>

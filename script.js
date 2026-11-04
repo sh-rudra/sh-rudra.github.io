@@ -1,94 +1,26 @@
 (() => {
-  const grid = document.querySelector("#project-grid");
+  document.documentElement.classList.add("js");
+
   const filterButtons = [...document.querySelectorAll(".filter")];
+  const projectCards = [...document.querySelectorAll(".project-card")];
   const navToggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector("#nav-links");
+  const navAnchors = [...document.querySelectorAll(".nav-links a[href^='#']")];
 
-  const categoryFor = (project) => {
-    const text = [project.title, ...project.tags, ...project.stack].join(" ").toLowerCase();
-    const categories = [];
-    if (/nlp|text|transformer|sentiment|language/.test(text)) categories.push("nlp");
-    if (/vision|opencv|drowsiness|proctoring/.test(text)) categories.push("vision");
-    if (/signal|ecg|eeg|audio|time-series|speech/.test(text)) categories.push("signal");
-    if (/mern|full-stack|mongodb|rest api/.test(text)) categories.push("full-stack");
-    return categories;
-  };
-
-  const make = (tag, className, text) => {
-    const element = document.createElement(tag);
-    if (className) element.className = className;
-    if (text) element.textContent = text;
-    return element;
-  };
-
-  const caseRow = (label, content) => {
-    const row = make("div", "case-row");
-    row.append(make("h4", "", label));
-    if (Array.isArray(content)) {
-      const list = make("ul");
-      content.forEach((item) => list.append(make("li", "", item)));
-      row.append(list);
-    } else {
-      row.append(make("p", "", content));
-    }
-    return row;
-  };
-
-  const render = (projects, filter = "all") => {
-    const fragment = document.createDocumentFragment();
-    projects.forEach((project, index) => {
-      const categories = categoryFor(project);
-      if (filter !== "all" && !categories.includes(filter)) return;
-
-      const card = make("article", "project-card");
-      card.dataset.categories = categories.join(" ");
-      card.append(make("p", "project-index", String(index + 1).padStart(2, "0")));
-      card.append(make("h3", "", project.title));
-      card.append(caseRow("What it solves", project.problem));
-      card.append(caseRow("Method", project.approach[0]));
-      if (!project.result.startsWith("Evaluation results")) card.append(caseRow("Outcome", project.result));
-      card.append(caseRow("Stack", project.stack.join(" · ")));
-
-      const tags = make("ul", "tags");
-      tags.setAttribute("aria-label", "Project tags");
-      project.tags.forEach((tag) => tags.append(make("li", "", tag)));
-      card.append(tags);
-
-      if (project.repo && project.repo !== "TODO") {
-        const link = make("a", "project-link", "View repository ↗");
-        link.href = project.repo;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-        card.append(link);
-      }
-      fragment.append(card);
-    });
-
-    grid.replaceChildren(fragment);
-    if (!grid.children.length) grid.append(make("p", "notice", "No projects in this category yet."));
-  };
-
-  fetch("projects.json")
-    .then((response) => {
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      return response.json();
-    })
-    .then((projects) => {
-      render(projects);
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          filterButtons.forEach((item) => {
-            const active = item === button;
-            item.classList.toggle("is-active", active);
-            item.setAttribute("aria-pressed", String(active));
-          });
-          render(projects, button.dataset.filter);
-        });
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+      filterButtons.forEach((item) => {
+        const active = item === button;
+        item.classList.toggle("is-active", active);
+        item.setAttribute("aria-pressed", String(active));
       });
-    })
-    .catch(() => {
-      grid.replaceChildren(make("p", "notice", "Projects could not be loaded. Serve this folder with a local web server and try again."));
+      projectCards.forEach((card) => {
+        const categories = card.dataset.categories.split(" ");
+        card.hidden = filter !== "all" && !categories.includes(filter);
+      });
     });
+  });
 
   navToggle?.addEventListener("click", () => {
     const open = navToggle.getAttribute("aria-expanded") !== "true";
@@ -103,11 +35,64 @@
     }
   });
 
+  const navSections = navAnchors
+    .map((anchor) => ({ anchor, section: document.querySelector(anchor.getAttribute("href")) }))
+    .filter(({ section }) => section);
+
+  let scrollFrame;
+  const updateActiveNav = () => {
+    const headerHeight = document.querySelector(".site-header")?.offsetHeight ?? 0;
+    const marker = window.scrollY + headerHeight + 120;
+    let active = null;
+
+    navSections.forEach((item) => {
+      if (item.section.offsetTop <= marker) active = item;
+    });
+
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+      active = navSections.at(-1);
+    }
+
+    navSections.forEach(({ anchor }) => {
+      const current = active?.anchor === anchor;
+      anchor.classList.toggle("is-active", current);
+      if (current) anchor.setAttribute("aria-current", "location");
+      else anchor.removeAttribute("aria-current");
+    });
+  };
+
+  window.addEventListener("scroll", () => {
+    if (scrollFrame) return;
+    scrollFrame = requestAnimationFrame(() => {
+      updateActiveNav();
+      scrollFrame = null;
+    });
+  }, { passive: true });
+  window.addEventListener("resize", updateActiveNav);
+  updateActiveNav();
+
+  const revealItems = [...document.querySelectorAll(".reveal, .project-card")];
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+  } else {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -24px" });
+    revealItems.forEach((item) => revealObserver.observe(item));
+  }
+
   document.querySelectorAll("[data-scroll-top]").forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
       window.scrollTo({ top: 0, left: 0, behavior: "auto" });
       history.replaceState(null, "", `${location.pathname}${location.search}`);
+      updateActiveNav();
     });
   });
 
