@@ -103,5 +103,13 @@
     }
   });
 
+  document.querySelectorAll("[data-scroll-top]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      history.replaceState(null, "", `${location.pathname}${location.search}`);
+    });
+  });
+
   document.querySelector("#year").textContent = new Date().getFullYear();
 })();
